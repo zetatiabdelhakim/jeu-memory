@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Jeu memory</title>
+</head>
+<body>
+    <div class="timing"> 
+        <img id="clock" src="images/PROTEGON logo.png" alt=""><p class="timing-text"><span id="time">47</span> seconds remaining!</p><button id="start"> Start </button>
+    </div>
+    <div class="game-land">
+        <img src="images/back.png" alt="" id="1">
+        <img src="images/back.png" alt="" id="2">
+        <img src="images/back.png" alt="" id="3">
+        <img src="images/back.png" alt="" id="4">
+        <img src="images/back.png" alt="" id="5">
+        <img src="images/back.png" alt="" id="6">
+        <img src="images/back.png" alt="" id="7">
+        <img src="images/back.png" alt="" id="8">
+        <img src="images/back.png" alt="" id="9">
+        <img src="images/back.png" alt="" id="10">
+        <img src="images/back.png" alt="" id="11">
+        <img src="images/back.png" alt="" id="12">
+        <img src="images/back.png" alt="" id="13">
+        <img src="images/back.png" alt="" id="14">
+        <img src="images/back.png" alt="" id="15">
+        <img src="images/back.png" alt="" id="16">
+    </div>
+    <div class="slider-c">
+    Time : <input type="range" name="" id="setTime" max="90" min="10" value="47" class="slider"> <span id="level">Medium</span>
+    </div>
+    <div class="end-c">
+        <div id="end"></div>
+        <button id="restart"> Restart</button>
+    </div>
+    <div class="decoration">
+    </div>
+    <script>
+        let decoration = document.getElementsByClassName("decoration")[0]
+        for(var i = 1; i<=70; i++){
+            var img = document.createElement("img");
+            decoration.appendChild(img);
+            var a = Math.floor(Math.random()*7 + 1);
+            img.id = `d${i}`;
+            img.src = `images/${a}.png`;
+            a = Math.floor(Math.random()*93 + 3);
+            b = Math.floor(Math.random()*87 + 3);
+            while(a > 32 && a < 68){
+            a = Math.floor(Math.random()*93 + 3);
+            }
+            img.style.left=a+'%';
+            img.style.top=b+'%';
+    }
+    </script>
+    <div class="compt">
+        Get Ready
+    </div>
+</body>
+<script src="script.js"></script>
+</html>
